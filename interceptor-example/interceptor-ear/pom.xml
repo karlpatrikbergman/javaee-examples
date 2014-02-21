@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>interceptor-example</artifactId>
+        <groupId>se.patrikbergman.java.ee.examples.interceptor</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>interceptor-ear</artifactId>
+    <packaging>ear</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>se.patrikbergman.java.ee.examples.interceptor</groupId>
+            <artifactId>interceptor-ejb</artifactId>
+            <version>${project.version}</version>
+            <type>ejb</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-ear-plugin</artifactId>
+                <version>${maven.ear.plugin.version}</version>
+                <configuration>
+                    <finalName>interceptor-ear</finalName>
+                    <defaultLibBundleDir>lib</defaultLibBundleDir>
+                    <modules>
+                        <!--<webModule>-->
+                            <!--<groupId>foo</groupId>-->
+                            <!--<artifactId>foo</artifactId>-->
+                            <!--<bundleFileName>foo.war</bundleFileName>-->
+                        <!--</webModule>-->
+                        <ejbModule>
+                            <groupId>se.patrikbergman.java.ee.examples.interceptor</groupId>
+                            <artifactId>interceptor-ejb</artifactId>
+                            <bundleFileName>interceptor-ejb.jar</bundleFileName>
+                        </ejbModule>
+                    </modules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

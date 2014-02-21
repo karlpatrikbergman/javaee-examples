@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="ejb-jar" name="interceptor-ejb:ejb">
+    <output-path>$PROJECT_DIR$/interceptor-ejb/target</output-path>
+    <root id="archive" name="interceptor-ejb-1.0-SNAPSHOT.jar">
+      <element id="artifact" artifact-name="interceptor-ejb:ejb exploded" />
+    </root>
+  </artifact>
+</component>
