@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="ear" name="interceptor-ear:ear">
-    <output-path>$PROJECT_DIR$/interceptor-ear/target</output-path>
-    <root id="archive" name="interceptor-ear-1.0-SNAPSHOT.ear">
-      <element id="artifact" artifact-name="interceptor-ear:ear exploded" />
-    </root>
-  </artifact>
-</component>
