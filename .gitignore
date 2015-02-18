@@ -25,3 +25,5 @@ release.properties
 
 # Mac
 .DS_Store
+
+.idea
