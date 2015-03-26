@@ -4,15 +4,11 @@ import javax.ejb.Remote;
 import javax.ejb.Stateless;
 import javax.interceptor.Interceptors;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 @Stateless(mappedName = "BandBean")
 @Remote(BandService.class)
 public class BandBean implements Serializable, BandService {
     public static final long serialVersionUID = 1L;
-
-	List<String> list = new ArrayList();
 
     @Interceptors({Performance.class, Log.class})
     public String hello(String name) {
