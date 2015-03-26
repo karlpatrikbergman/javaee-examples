@@ -25,9 +25,8 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-ear-plugin</artifactId>
-                <version>${maven.ear.plugin.version}</version>
                 <configuration>
-                    <finalName>interceptor-ear</finalName>
+                    <!--<finalName>interceptor-ear</finalName>-->
                     <defaultLibBundleDir>lib</defaultLibBundleDir>
                     <modules>
                         <!--<webModule>-->
@@ -41,6 +40,22 @@
                             <bundleFileName>interceptor-ejb.jar</bundleFileName>
                         </ejbModule>
                     </modules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.oracle.weblogic</groupId>
+                <artifactId>weblogic-maven-plugin</artifactId>
+                <version>12.1.3-0-0</version>
+                <configuration>
+                    <name>${project.build.finalName}</name>
+                    <source>${project.build.directory}/${project.build.finalName}.${project.packaging}
+                    </source>
+                    <adminurl>${adminurl}</adminurl>
+                    <user>${user}</user>
+                    <password>${password}</password>
+                    <targets>${targets}</targets>
+                    <remote>${remote}</remote>
+                    <upload>${upload}</upload>
                 </configuration>
             </plugin>
         </plugins>

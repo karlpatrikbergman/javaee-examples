@@ -1,16 +1,15 @@
 package se.patrikbergman.java.ee.examples.interceptor.ejb;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.InvocationContext;
-import java.util.logging.Logger;
 
 public class Performance {
     protected String greeting;
     private static final String trace = Performance.class.getSimpleName();
-    private static final Logger log = Logger.getLogger(trace);
-
-    public Performance() {
-    }
+	private static Logger log = LoggerFactory.getLogger(Performance.class);
 
     @AroundInvoke
     public Object measureTime(InvocationContext ctx) throws Exception {
