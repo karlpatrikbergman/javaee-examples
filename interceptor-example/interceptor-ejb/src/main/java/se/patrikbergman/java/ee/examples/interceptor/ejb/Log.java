@@ -31,7 +31,6 @@ public class Log {
 				logString.append(s);
 			}
 		}
-//		logString.append(")");
 
 		log.info(logString.toString());
 

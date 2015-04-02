@@ -10,6 +10,7 @@ import java.io.Serializable;
 public class BandBean implements Serializable, BandService {
     public static final long serialVersionUID = 1L;
 
+
     @Interceptors({Performance.class, Log.class})
     public String hello(String name) {
 		try {
@@ -19,5 +20,15 @@ public class BandBean implements Serializable, BandService {
 		}
 		return "Hello " + name + "! ";
     }
+
+	@Override
+	public void play() {
+
+	}
+
+	@Override
+	public int getRockFactor() {
+		return 0;
+	}
 
 }
